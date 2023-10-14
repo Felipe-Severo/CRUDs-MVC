@@ -1,33 +1,31 @@
 ﻿@model VehiclesModel
-@*Bloco de código MVC*@
 @{
-    // Setar o título da página
     ViewData["Title"] = "Veículos";
 }
 <div class="text-center">
     <h3>Lista de veículos</h3>
     <a type="button" class="btn btn-primary float-end" asp-controller="Vehicles" asp-action="Add">Incluir novo veículo</a>
-    <table class="table table-striped">
-        <thead>
+    <table class="table table-hover">
+        <thead class="text-light">
             <tr>
-                <th>ID</th>
-                <th>Tipo de veículo</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Ano</th>
-                <th>Placa</th>
+                <th> class="text-center"ID</th>
+                <th class="text-center">Tipo de veículo</th>
+                <th class="text-center">Marca</th>
+                <th class="text-center">Modelo</th>
+                <th class="text-center">Ano</th>
+                <th class="text-center">Placa</th>
             </tr>
         </thead>
         <tbody>
             @foreach(var vehicle in Model.Vehicles)
             {
                 <tr>
-                    <td>@vehicle.Id</td>
-                    <td>@vehicle.VehicleType.ToString()</td>
-                    <td>@vehicle.VehicleBrand.ToString()</td>
-                    <td>@vehicle.VehicleName</td>
-                    <td>@vehicle.SelectedYear</td>
-                    <td>@vehicle.LicensePlate</td>
+                    <td class="text-light bg-dark">@vehicle.Id</td>
+                    <td class="text-light bg-dark">@vehicle.VehicleType.ToString()</td>
+                    <td class="text-light bg-dark">@vehicle.VehicleBrand.ToString()</td>
+                    <td class="text-light bg-dark">@vehicle.VehicleName</td>
+                    <td class="text-light bg-dark">@vehicle.SelectedYear</td>
+                    <td class="text-light bg-dark">@vehicle.LicensePlate</td>
                     <td>
                         <div>
                             <a type="button" class="btn btn-warning" asp-route-id="@vehicle.Id" asp-controller="Vehicles" asp-action="Update">Editar</a>

@@ -26,6 +26,10 @@
                     <td>@user.Name</td>
                     <td>@user.Email</td>
                     <td>@user.AccessType.ToString()</td>
+                    <td>
+                        <a type="button" class="btn btn-warning" asp-controller="Users" asp-action="Update" asp-route-id="@user.Id">Editar</a>
+                        <a type="button" class="btn btn-danger" asp-controller="Users" asp-action="Delete" asp-route-id="@user.Id">Excluir</a>
+                    </td>
                 </tr>
             }
         </tbody>
