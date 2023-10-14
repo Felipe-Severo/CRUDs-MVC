@@ -1,0 +1,35 @@
+﻿@model ProdutosModel
+@{
+    ViewData["Title"] = "Produtos";
+}
+<div>
+    <h3>Produtos</h3>
+    <a type="button" class="btn btn-primary" asp-controller="Produtos" asp-action="Add">Novo</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model.Produtos)
+            {
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Preco</td>
+                    <td>@produto.Categoria</td>
+                    <td>
+                        <div>
+                            <a type="button" class="btn btn-warning" asp-route-id="@produto.Id" asp-controller="Produtos" asp-action="Update">Editar</a>
+                            <a type="button" class="btn btn-danger" asp-route-id="@produto.Id" asp-controller="Produtos" asp-action="Delete">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -55,12 +55,12 @@
             &copy; 2023 - WebApplicationMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             <div class="float-end">
                 Conexão com o Banco: 
+                
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                     <i class="fa fa-window-close" aria-hidden="false"></i>
-                @* @WebApplicationMVC.Business.Utils.DBConnect.TesteConnection().ToString(); *@
+                @WebApplicationMVC.Business.Utils.DBConnect.TesteConnection().ToString();
             </div>
-        </div>
-        
+        </div>       
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
